@@ -11,6 +11,12 @@ from django.http import HttpResponse,JsonResponse
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth.models import User
 
+def static(request,slug):
+    url='static/'+slug
+    print(slug)
+    print(url)
+    return render(request,url)
+
 def Search(request):
     sd='Search data'
     pro=product.objects.all()
