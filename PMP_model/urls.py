@@ -66,7 +66,7 @@ urlpatterns = [
     path('logout', LogoutView.as_view(),name='logout'),
     # signin view
     path('signin',LoginView.as_view(template_name='log.html'),name='signin'),
-
+    path('static/<slug:slug>',views.static),
 ]
 
 handler404='mng.views.error_404_view'
