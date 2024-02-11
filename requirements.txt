@@ -1,4 +1,3 @@
---upgrade pip
 anyio==3.6.2
 asgiref==3.6.0
 blinker==1.6.2
