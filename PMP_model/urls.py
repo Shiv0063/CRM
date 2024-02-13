@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LoginView,LogoutView
 from mng import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('',views.main),
@@ -67,6 +70,6 @@ urlpatterns = [
     # signin view
     path('signin',LoginView.as_view(template_name='log.html'),name='signin'),
     path('static/<slug:slug>',views.static),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404='mng.views.error_404_view'
