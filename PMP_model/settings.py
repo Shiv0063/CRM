@@ -152,6 +152,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = "/var/www/crm-qmtv.onrender.com/static/"
 STATICFILES_DIRS=[
     BASE_DIR / "static",
         "/var/www/static/",
