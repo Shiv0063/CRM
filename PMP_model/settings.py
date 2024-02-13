@@ -17,7 +17,7 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
-STATIC_DIR=os.path.join(BASE_DIR,'static')
+# STATIC_DIR=os.path.join(BASE_DIR,'static')
 # MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 
@@ -150,15 +150,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static'
+# STATIC_URL = 'static'
 
-STATIC_ROOT = "/var/www/crm-qmtv.onrender.com/static/"
-STATICFILES_DIRS=[
-        STATIC_DIR,
-        STATIC_URL,
-        "/var/www/static/",
- ]
-
+# STATIC_ROOT = "/var/www/crm-qmtv.onrender.com/static/"
+# STATICFILES_DIRS=[
+#         STATIC_DIR,
+#         STATIC_URL,
+#         "/var/www/static/",
+#  ]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static')]
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
